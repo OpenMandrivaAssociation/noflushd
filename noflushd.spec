@@ -12,7 +12,6 @@ Source0:	http://ufpr.dl.sourceforge.net/sourceforge/noflushd/%{name}_%{version}.
 Source1:	%{name}.sysconfig
 Source2:	%{name}.init
 URL:		http://noflushd.sourceforge.net/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires(pre):	rpm-helper
 
 %description
