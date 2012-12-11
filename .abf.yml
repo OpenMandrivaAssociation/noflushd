@@ -1,4 +1,2 @@
 sources:
-  "noflushd_2.7.5.orig.tar.bz2:"	24dcb4e3f8992a1d638a6424e95212e5617775d0
-  "noflushd.init:"	b6b3636df3f8ac483996ef4fa5e88bcf49241695
-  "noflushd.sysconfig:"	f094ba7464c344584a17f3a0d705296920349952
+  "noflushd_2.7.5.orig.tar.bz2": 24dcb4e3f8992a1d638a6424e95212e5617775d0

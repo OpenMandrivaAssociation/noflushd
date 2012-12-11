@@ -55,3 +55,48 @@ rm -fr %{buildroot}/usr/doc
 %config(noreplace) %{_sysconfdir}/sysconfig/%{name}
 %{_mandir}/man8/%{name}.8*
 
+
+
+%changelog
+* Tue May 03 2011 Michael Scherer <misc@mandriva.org> 2.7.5-7mdv2011.0
++ Revision: 664790
+- rebuild
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - the mass rebuild of 2010.0 packages
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 2.7.5-5mdv2010.0
++ Revision: 430181
+- rebuild
+
+* Tue Jul 29 2008 Thierry Vignaud <tv@mandriva.org> 2.7.5-4mdv2009.0
++ Revision: 254057
+- rebuild
+
+* Thu Jan 03 2008 Olivier Blin <oblin@mandriva.com> 2.7.5-2mdv2008.1
++ Revision: 141006
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Fri Aug 11 2006 Stew Benedict <sbenedict@mandriva.com> 2.7.5-2mdv2007.0
+- rebuild, Requires(pre)
+
+* Tue Jul 26 2005 Nicolas Lécureuil <neoclust@mandriva.org> 2.7.5-1mdk
+- 2.7.5
+
+* Tue Nov 16 2004 Per Ã˜yvind Karlsen <peroyvind@linux-mandrake.com> 2.7.4-1mdk
+- 2.7.4
+- don't wipe out buildroot in %%prep
+
+* Mon May 03 2004 Stew Benedict <sbenedict@mandrakesoft.com> 2.7.3-1mdk
+- 2.7.3
+
+* Thu Jan 22 2004 Stew Benedict <sbenedict@mandrakesoft.com> 2.7-1mdk
+- 2.7
+
+* Fri Jan 02 2004 Stew Benedict <sbenedict@mandrakesoft.com> 2.6.3-3mdk
+- rebuild
+

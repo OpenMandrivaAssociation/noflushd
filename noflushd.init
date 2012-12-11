@@ -1,0 +1,80 @@
+#!/bin/bash
+#
+# noflushd	Start the noflush daemon to spin down idle disks.
+#
+# chkconfig: 2345 80 10
+# description: 	Start and stop the noflush daemon to handle spindown \
+#		of idle disks.
+#
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Default values.
+NOFLUSHD_DISKS="/dev/hda"
+NOFLUSHD_TIMEOUT="20"
+
+# Source the config file to override the default values or die.
+[ -f /etc/sysconfig/noflushd ] || exit 1
+. /etc/sysconfig/noflushd
+
+[ ${NOFLUSHD_START} = "yes" ] || exit 0
+
+OPTIONS="-n ${NOFLUSHD_TIMEOUT} ${NOFLUSHD_DISKS}"
+
+RETVAL=0
+
+start(){
+    echo -n "Starting noflushd (timeout set to ${NOFLUSHD_TIMEOUT}m): "
+    daemon noflushd $OPTIONS
+    RETVAL=$?
+    echo
+    touch /var/lock/subsys/noflushd
+    return $RETVAL
+}
+
+stop(){
+    echo -n "Stopping noflushd: "
+    killproc noflushd
+    RETVAL=$?
+    echo
+    rm -f /var/lock/subsys/noflushd
+    return $RETVAL
+}
+
+restart(){
+    stop
+    start
+}
+
+condrestart(){
+    [ -e /var/lock/subsys/noflushd ] && restart
+    return 0
+}
+
+# See how we were called.
+case "$1" in
+    start)
+	start
+	;;
+    stop)
+	stop
+	;;
+    status)
+	status noflushd
+	;;
+    reload)
+	;;
+    restart)
+	restart
+	;;
+    condrestart)
+	condrestart
+	;;
+    *)
+	echo "Usage: noflushd {start|stop|status|reload|restart|condrestart}"
+	RETVAL=1
+esac
+
+exit $RETVAL
+

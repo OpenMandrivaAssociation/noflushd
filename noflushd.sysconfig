@@ -1,0 +1,9 @@
+# Start noflushd at boot time
+NOFLUSHD_START="yes"
+
+# Put all the disks to spin down here serarated by spaces
+NOFLUSHD_DISKS="/dev/hda"
+
+# Default timeout in minutes
+NOFLUSHD_TIMEOUT="20"
+
