@@ -1,6 +1,6 @@
 %define	name	noflushd
 %define	version	2.7.5
-%define	release	%mkrel 7
+%define release	8
 
 Summary:	Daemon that sends idle disks to sleep
 Name:		%{name}
