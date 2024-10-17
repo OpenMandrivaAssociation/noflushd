@@ -11,7 +11,7 @@ Group:		System/Configuration/Other
 Source0:	http://ufpr.dl.sourceforge.net/sourceforge/noflushd/%{name}_%{version}.orig.tar.bz2
 Source1:	%{name}.sysconfig
 Source2:	%{name}.init
-URL:		http://noflushd.sourceforge.net/
+URL:		https://noflushd.sourceforge.net/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires(pre):	rpm-helper
 
